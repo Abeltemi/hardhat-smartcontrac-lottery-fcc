@@ -29,14 +29,15 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
 
     // variables that will be passed to raffle.sol constructor args
     const entranceFee = networkConfig[chainId]["entranceFee"]
+    console.log(`entranceFee: ${entranceFee}`)
     const gasLane = networkConfig[chainId]["gasLane"]
+    onsole.log(`gaseLane: ${gasLane}`)
     const callbackGasLimit = networkConfig[chainId]["subscriptionId"]
     const interval = networkConfig[chainId]["interval"]
     const args = [
         vrfCoordinatorV2Address,
         entranceFee,
         gasLane,
-        subscriptionId,
         subscriptionId,
         callbackGasLimit,
         interval,
