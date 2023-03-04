@@ -13,6 +13,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     if (developmentChains.includes(network.name)) {
         //Get the mock contract
         const vrfCoordinatorV2Mock = await ethers.getContractAt("VRFCoordinatorV2Mock")
+        console.log(`vrfcoordinatorv2mock ${vrfCoordinatorV2Mock}`)
         vrfCoordinatorV2Address = vrfCoordinatorV2Mock.address
 
         //Locally create subscription ID
